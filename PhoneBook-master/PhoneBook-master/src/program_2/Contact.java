@@ -7,6 +7,15 @@ public class Contact {
 
     // Constructor
     public Contact(String firstName, String lastName, String phone) {
+       if (firstName == null || firstName.trim().isEmpty()) {
+        throw new IllegalArgumentException("First name cannot be empty.");
+    }
+    if (lastName == null || lastName.trim().isEmpty()) {
+        throw new IllegalArgumentException("Last name cannot be empty.");
+    }
+    if (phone == null || phone.trim().isEmpty()) {
+        throw new IllegalArgumentException("Phone number cannot be empty.");
+    }
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
